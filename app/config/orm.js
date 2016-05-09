@@ -5,19 +5,15 @@ var tableName = "Burger";
 var orm = {
 
 
-	addBurger: function(character, callback){
+	addBurger: function(character){
 
-		 
-		var routeName = character.name.replace(/\s+/g, '').toLowerCase();
-		console.log(routeName);
+		// var routeName = character.name.replace(/\s+/g, '').toLowerCase();
 
 		var s = "INSERT INTO " + tableName + " (burger_name) VALUES (?)";
-
-		connection.query(s,[character.burger_name], function(err, result) {
-            console.log(character.burger_name);
-            callback(result);
-
-        
+			console.log('NEWBURGER',character.newBurger)
+		connection.query(s, [character.newBurger], function(err, result) {
+          console.log('result', result);
+          res.json(result);
         });
 
 	}

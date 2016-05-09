@@ -61,7 +61,7 @@
 				
 
 			var currentURL = window.location.origin;
-$.post( currentURL + "/api/burger", newBurger)
+$.post( currentURL + "/api/burger", {newBurger:newBurger})
 				.done(function(data){
 					console.log(data);
 				})	
