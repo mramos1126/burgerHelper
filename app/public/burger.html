@@ -53,15 +53,22 @@
 	<script type="text/javascript"> 
 		$(document).ready(function() {
 			$('#burger').on('click', function(){
-				var	newBurger = $("#word").val();
+				var	newBurger =  $("#word").val();
+			
 
 				$('#list').append('<br>' + newBurger +'<br>');
 				console.log(newBurger);
-				return false;
+				
 
 			var currentURL = window.location.origin;
-
-
+$.post( currentURL + "/api/burger", newBurger)
+				.done(function(data){
+					console.log(data);
+				})	
+				
+			$('#word').val("");
+			return false;
+			
 			});
 		
 
@@ -76,17 +83,7 @@ return false;
 		});	
 
 
-	// 			// var currentURL = window.location.origin;
-
-
-	// 			// $.post( currentURL +  newBurger)
-	// 			// .done(function(data){
-	// 			// 	console.log(data);
-
-	// 			// $('#burger').val("");
-
-	// 			// });
-		
+	
 
 
 </script>
