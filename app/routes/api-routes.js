@@ -8,6 +8,8 @@ module.exports = function(app){
 
 		// Take the request...
 		var character = req.body;
+		console.log(character);
+		res.json(character);
 
 		// Then send it to the ORM to "save" into the DB.
 		orm.addBurger(character, function(){
