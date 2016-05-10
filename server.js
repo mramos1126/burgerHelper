@@ -16,5 +16,5 @@ require("./app/routes/api-routes.js")(app)
 require("./app/routes/html-routes.js")(app)
 
 
-var port = 3400;
+var port = process.env.PORT || 3400;
 app.listen(port);
