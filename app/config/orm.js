@@ -12,7 +12,7 @@ var orm = {
 		var s = "INSERT INTO " + tableName + " (burger_name) VALUES (?)";
 			console.log('NEWBURGER',character.newBurger)
 		connection.query(s, [character.newBurger], function(err, result) {
-          console.log('result', result);
+          //console.log('result', result);
           res.json(result);
         });
 
