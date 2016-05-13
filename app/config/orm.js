@@ -16,7 +16,15 @@ var orm = {
           res.json(result);
         });
 
-	}
+	},
+	var t = "INSERT INTO " + tableName + " (burger_name) VALUES (?)";
+			console.log('NEWBURGER',character.newBurger)
+		connection.query(t, [character.newBurger], function(err, result) {
+          //console.log('result', result);
+          res.json(result);
+        });
+
+	},
 }
 
 module.exports = orm;
